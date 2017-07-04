@@ -9,6 +9,7 @@ import {
     ListView,
     AlertIOS,
     TouchableHighlight,
+    TouchableOpacity,
     Button,
     Image,
     Dimensions,
@@ -190,7 +191,6 @@ export default class Detail extends Component {
         this._fetchData();
     }
     _onFocus(){
-        console.log('dian')
         this._handleModal(true);
     }
 
@@ -223,21 +223,26 @@ export default class Detail extends Component {
                 </View>
             </View>
             <View style={styles.InputBox}>
-                <View>
-                    <TextInput
-                        placeholder='评论一下吧...'
-                        placeholderTextColor='#ccc'
-                        style={styles.InputContent}
-                        onFocus = {this._onFocus.bind(this)}
-                        editable={true}
-                        multiline={true}
-                    />
-                    <View style={styles.commentArea}>
-                        <Text style={styles.commentAreaTitle}>
-                            精彩评论
-                        </Text>
+                <TouchableOpacity
+                    onPress={this._onFocus.bind(this)}
+                >
+                    <View>
+                        <View
+                            placeholderTextColor='#ccc'
+                            style={styles.InputContentView}
+                        >
+                            <Text
+                                style={styles.InputContentPlaceholder}
+                            >评论一下吧...</Text>
+                        </View>
+                        <View style={styles.commentArea}>
+                            <Text style={styles.commentAreaTitle}>
+                                精彩评论
+                            </Text>
+                        </View>
                     </View>
-                </View>
+                </TouchableOpacity>
+
             </View>
 
 
@@ -464,6 +469,17 @@ const styles = StyleSheet.create({
         borderColor: '#ddd',
         height: 80,
         fontSize: 16
+    },
+    InputContentView: {
+        width: Width - 20,
+        marginLeft: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        height: 80,
+    },
+    InputContentPlaceholder: {
+        fontSize: 16,
+        color: '#7a7a7a'
     },
     commentArea: {
         width: Width,

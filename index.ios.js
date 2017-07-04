@@ -56,7 +56,7 @@ export default class Doge extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'Creation',
+            selectedTab: 'Setting',
             noLogin: true
         }
     }
