@@ -17,6 +17,13 @@ module.exports = {
         comments: '/api/comments',
         postComment: '/api/comment',
         getCode: '/api/getCode',
-        login: '/api/login'
+        login: '/api/login',
+        signature: '/api/sig',
+        updateInfo: '/api/updateInfo'
+    },
+    CLOUDINARY: {
+        cloud_name: 'douglasvegas',
+        api_key: '619897183562384',
+        api_secret: 'MfrRteIJKcPb87SSWWrf8mku8Gk',
     }
 };
